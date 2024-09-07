@@ -1,0 +1,37 @@
+name: CI - Google Test
+
+on:
+  push:
+    branches:
+      - master  # principale branche
+  pull_request:
+    branches:
+      - master  # principale branche for pull requests
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest  # using Windows environments
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Setup Visual Studio
+      uses: actions/setup-dotnet@v2
+      with:
+        vs-version: latest
+
+    - name: Restore dependencies
+      run: |
+        msbuild src/src.sln -t:restore
+
+    - name: Build solution
+      run: |
+        msbuild src/src.sln
+
+    - name: Run tests
+      run: |
+        src/x64/Debug/unit_tests.exe
