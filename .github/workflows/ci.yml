@@ -3,14 +3,14 @@ name: CI - Google Test
 on:
   push:
     branches:
-      - master  # principale branche
+      - master  # principale branch
   pull_request:
     branches:
-      - master  # principale branche for pull requests
+      - master  # principale branch for pull requests
 
 jobs:
   build-and-test:
-    runs-on: windows-latest  # using Windows environments
+    runs-on: windows-latest  # using Windows environment
 
     steps:
     - name: Checkout code
@@ -19,19 +19,15 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.2
 
-    - name: Setup Visual Studio
-      uses: actions/setup-dotnet@v2
-      with:
-        vs-version: latest
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5  # setup NuGet to restore packages
 
-    - name: Restore dependencies
-      run: |
-        msbuild src/src.sln -t:restore
+    - name: Restore NuGet packages
+      run: nuget restore src/src.sln
 
     - name: Build solution
-      run: |
-        msbuild src/src.sln
+      run: msbuild src/src.sln
 
     - name: Run tests
-      run: |
-        src/x64/Debug/unit_tests.exe
+      run: src/x64/Debug/unit_tests.exe
+
