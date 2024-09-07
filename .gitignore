@@ -2,3 +2,5 @@
 src/x64/
 src/development/x64
 src/library/x64
+src/unit_tests/x64
+src/packages
