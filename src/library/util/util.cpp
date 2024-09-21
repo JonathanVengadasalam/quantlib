@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "util.h"
-#include <cmath>
 
 void Vector::swap(double& a, double& b) {
     double temp = a;
@@ -53,6 +52,21 @@ double& Vector::operator[](const long& ind) {
 }
 const double Vector::operator[](const long& ind) const {
     return itsArray[ind];
+}
+void Vector::reSize(const long& size, const bool& keepValues) {
+    double* newArray = new double[size];
+    if (keepValues) {
+        long minSize = size < itsSize ? size : itsSize;
+        for (long i = 0; i < minSize; ++i) {
+            newArray[i] = itsArray[i];
+        }
+    }
+    delete[] itsArray;
+    itsArray = newArray;
+    itsSize = size;
+}
+void Vector::swap(const long& i, const long& j) {
+    swap(itsArray[i], itsArray[j]);
 }
 
 void Vector::quickSort() {

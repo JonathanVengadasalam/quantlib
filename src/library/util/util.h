@@ -18,6 +18,8 @@ public:
 	~Vector();
 	double& operator[](const long& ind);
 	const double operator[](const long& ind) const;
+	void reSize(const long& size, const bool& keepValues = false);
+	void swap(const long& i, const long& j);
 	void quickSort();
 	long maxIndex();
 	double sum();
