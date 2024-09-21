@@ -1,15 +1,15 @@
 #include "pch.h"
 #include "random_generator/lcg_generator.h"
 
-LCGGenerator::LCGGenerator(const long& size, const size_t& seed) : RandomGenerator(size) {
-	itsSeed = seed;
-}
+LCGGenerator::LCGGenerator(const long& size, const size_t& seed) 
+	: RandomGenerator(size), itsSeed(seed) {}
 void LCGGenerator::generateValues() {
 	size_t x = itsSeed;
 	double doubled_modulus = static_cast<double>(modulus);
-	for (long i = 0; i < itsVector->itsSize; ++i) {
+	double* vectArray = itsCube->itsArray;
+	for (long i = 0; i < itsCube->itsSize; ++i) {
 		x = (multiplier * x + increment) % modulus;
-		(*itsVector)[i] = x / doubled_modulus;
+		vectArray[i] = x / doubled_modulus;
 	}
 }
 

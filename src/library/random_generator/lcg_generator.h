@@ -8,6 +8,6 @@ public:
 	static const size_t modulus;
 
 	size_t itsSeed;
-	LCGGenerator(const long& size, const size_t& seed = 10.);
+	LCGGenerator(const long& size, const size_t& seed = 10);
 	void generateValues();
 };

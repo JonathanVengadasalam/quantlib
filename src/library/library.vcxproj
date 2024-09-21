@@ -146,6 +146,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="random_generator\lcg_generator.h" />
     <ClInclude Include="random_generator\random_generator.h" />
+    <ClInclude Include="random_generator\tore_generator.h" />
     <ClInclude Include="util\util.h" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +159,7 @@
     </ClCompile>
     <ClCompile Include="random_generator\lcg_generator.cpp" />
     <ClCompile Include="random_generator\random_generator.cpp" />
+    <ClCompile Include="random_generator\tore_generator.cpp" />
     <ClCompile Include="util\util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
