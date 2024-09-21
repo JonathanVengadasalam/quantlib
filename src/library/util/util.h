@@ -28,3 +28,17 @@ public:
 	double skewness(const double& mean, const double& variance);
 	double kurtosis(const double& mean, const double& variance);
 };
+
+class LIBRARY_API Cube : public Vector {
+public:
+	long itsSizeX;
+	long itsSizeY;
+	long itsSizeZ;
+	Cube();
+	Cube(const long& xSize, const long& ySize, const long& zSize, double* vector = nullptr);
+	Cube(const Cube& cube);
+	~Cube();
+	double& get(const long& x, const long& y, const long& z);
+	const double get(const long& x, const long& y, const long& z) const;
+	void reSize(const long& x, const long& y, const long& z, const bool& keepValues = false);
+};
