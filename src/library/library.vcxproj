@@ -144,6 +144,8 @@
     <ClInclude Include="export\export.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="random_generator\lcg_generator.h" />
+    <ClInclude Include="random_generator\random_generator.h" />
     <ClInclude Include="util\util.h" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +156,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="random_generator\lcg_generator.cpp" />
+    <ClCompile Include="random_generator\random_generator.cpp" />
     <ClCompile Include="util\util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
