@@ -31,6 +31,9 @@
     <ClInclude Include="random_generator\tore_generator.h">
       <Filter>random_generator</Filter>
     </ClInclude>
+    <ClInclude Include="util\vector.h">
+      <Filter>util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -49,5 +52,10 @@
     <ClCompile Include="random_generator\tore_generator.cpp">
       <Filter>random_generator</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="util\vector_impl.tpp">
+      <Filter>util</Filter>
+    </None>
   </ItemGroup>
 </Project>

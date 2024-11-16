@@ -10,11 +10,11 @@ RandomGenerator::~RandomGenerator() {
 double RandomGenerator::probability(const double& observation) {
 	return observation;
 }
-Vector RandomGenerator::kolmogorovSmirnov(const bool& forceSort) {
+DblVector RandomGenerator::kolmogorovSmirnov(const bool& forceSort) {
 	if (forceSort) {
 		itsCube->quickSort();
 	}
-	Vector vector(itsCube->itsSize);
+	DblVector vector(itsCube->itsSize);
 	double* vectorArray = vector.itsArray;
 	double* localArray = itsCube->itsArray;
 	double size = itsCube->itsSize;

@@ -148,6 +148,7 @@
     <ClInclude Include="random_generator\random_generator.h" />
     <ClInclude Include="random_generator\tore_generator.h" />
     <ClInclude Include="util\util.h" />
+    <ClInclude Include="util\vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
@@ -161,6 +162,9 @@
     <ClCompile Include="random_generator\random_generator.cpp" />
     <ClCompile Include="random_generator\tore_generator.cpp" />
     <ClCompile Include="util\util.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="util\vector_impl.tpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
