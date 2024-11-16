@@ -1,5 +1,6 @@
 #pragma once
 #include "util/util.h"
+#include "util/vector.h"
 
 class LIBRARY_API RandomGenerator {
 public:
@@ -8,5 +9,5 @@ public:
 	virtual ~RandomGenerator();
 	virtual void generateValues() = 0;
 	virtual double probability(const double& observation);
-	Vector kolmogorovSmirnov(const bool& forceSort = false);
+	DblVector kolmogorovSmirnov(const bool& forceSort = false);
 };
